@@ -18,22 +18,27 @@
 
         <div class="google">
             <img src="25.png" alt="Google logo">
-
+            
         </div>
         <form action="https://www.google.com/search">
             <div class="searchbar">
-                <input type="text" name="q">
+                <input type="text" name="q" id="search-box">
                 
             </div>
             <div class="last">
                 <button class="search" type="submit">Google Search</button>
-                <button onclick="redirectToPage()" class="lucky" type="submit">I'm feeling lucky</button>
+                <button class="lucky" type="submit">I'm feeling lucky</button>
             </div>  
         </form>
         <script>
-            function redirectToPage(){
-               window.location.href="https://www.google.com" ;
-            }
+            const feelingLucky= document.getElementById('search-box');
+            feelingLucky.addEventListener('click', () => {
+                const searchTerm = document.querySelector('input[name="q"]').value;
+                if (searchTerm){
+                    window.location.href = 'https://www.google.com/url?q=${searchTerm}&btnI';
+
+                }
+            });
         </script>
     </body>
 </html>
