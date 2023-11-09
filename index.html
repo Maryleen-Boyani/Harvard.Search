@@ -22,12 +22,12 @@
         </div>
         <form action="https://www.google.com/search">
             <div class="searchbar">
-                <input type="text" name="q" id="search-box">
+                <input type="text" name="q">
                 
             </div>
             <div class="last">
                 <button class="search" type="submit">Google Search</button>
-                <button class="lucky" type="submit">I'm feeling lucky</button>
+                <input  id="search-box" value="I'm Feeling Lucky" class="lucky" type="button" >
             </div>  
         </form>
         <script>
@@ -35,8 +35,8 @@
             feelingLucky.addEventListener('click', () => {
                 const searchTerm = document.querySelector('input[name="q"]').value;
                 if (searchTerm){
-                    window.location.href = 'https://www.google.com/url?q=${searchTerm}&btnI';
-
+                    window.location.href =`https://www.google.com/search?q=${searchTerm}&btnI`;
+                    preventDefault();
                 }
             });
         </script>
